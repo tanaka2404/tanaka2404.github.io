@@ -6,7 +6,26 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>test1</h1>
-    <button>test</button>
+    <textarea id="myText" rows="10" cols="30" placeholder="テキストを入力してください"></textarea><br>
+    <button onclick="downloadText()">ダウンロード</button>
+
+    <script>
+        function downloadText() {
+            const text = document.getElementById('myText').value; // テキストボックスの内容取得
+            const blob = new Blob([text], { type: 'text/plain' }); // Blobに変換
+            const url = URL.createObjectURL(blob); // URL作成
+
+            // ダウンロードリンクの作成
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'myscript.txt'; // ファイル名
+            document.body.appendChild(a);
+            a.click();
+
+            // 一時的なリンクを削除
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+    </script>
 </body>
 </html>
