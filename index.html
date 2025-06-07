@@ -1,47 +1,11 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8" />
-<title>画像とmanifestのzipダウンロード</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.0/jszip.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mainpage</title>
 </head>
 <body>
-<h1>画像とmanifestをzip化してダウンロード</h1>
-<input type="file" id="imageInput" accept="image/*" multiple />
-<button id="downloadButton">ダウンロード</button>
-
-<script>
-document.getElementById('downloadButton').onclick = async () => {
-const files = document.getElementById('imageInput').files;
-const zip = new JSZip();
-
-// 選択した画像をzipに追加
-for (let i = 0; i < files.length; i++) {
-    const file = files[i];
-    const data = await file.arrayBuffer();
-    zip.file(`images/${file.name}`, data);
-}
-
-// manifest.jsonを書く（例として）
-const manifest = {
-    name: "Sample Manifest",
-    version: "1.0",
-    images: Array.from(files).map(f => `images/${f.name}`)
-};
-zip.file("manifest.json", JSON.stringify(manifest, null, 2));
-
-// zipファイルの生成とダウンロード
-zip.generateAsync({ type: "blob" }).then(function(content) {
-    const url = URL.createObjectURL(content);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "archive.zip";
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-});
-};
-</script>
+    <a href="https://tanaka2404.github.io/chrome-extensions">chrome拡張機能</a>
 </body>
 </html>
