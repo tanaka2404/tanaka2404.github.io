@@ -12,6 +12,24 @@
             
         </div>
         <script src="js/main/index.js"></script>
-        <script src="https://raw.githubusercontent.com/tanaka2404/tanaka2404.github.io/refs/heads/main/js/sidebar/sidebar.js"></script>
+        <script>
+            fetch('https://raw.githubusercontent.com/tanaka2404/tanaka2404.github.io/refs/heads/main/sidebar/sidebar.html') // 取得したい外部ページのURLに置き換え
+            .then(response => response.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const targetElement = doc.querySelector('#fetchContent');
+                    const resultContainer = document.getElementById('headerSidebar');
+                    if (targetElement) {
+                    resultContainer.innerHTML = '';
+                    resultContainer.appendChild(targetElement.cloneNode(true));
+                    } else {
+                    resultContainer.textContent = '要素が見つかりません';
+                    }
+                })
+                .catch(error => {
+                    document.getElementById('headerSidebar').textContent = 'エラー: ' + error.message;
+                });
+        </script>
     </body>
 </html>
