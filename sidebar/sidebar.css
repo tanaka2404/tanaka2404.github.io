@@ -27,6 +27,7 @@ body {
     overflow: hidden;
     z-index: 10;
     border-bottom: 2px outset;
+    background-color: #FFF;
 }
 #sidebarMenu {
     height: 100%;
@@ -37,6 +38,7 @@ body {
     transform: translateX(250px);
     transition: transform 250ms ease-in-out;
     border-left: 2px outset;
+    background-color: #FFF;
 }
 .sidebarMenuInner{
     margin:0;
