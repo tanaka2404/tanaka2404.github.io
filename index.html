@@ -10,7 +10,6 @@
     <body>
         <div id="headerSidebar"></div>
         <div class="main">
-            
         </div>
         <script src="js/main/index.js"></script>
         <script>
@@ -24,13 +23,8 @@
                     if (targetElement) {
                     resultContainer.innerHTML = '';
                     resultContainer.appendChild(targetElement.cloneNode(true));
-                    } else {
-                    resultContainer.textContent = '要素が見つかりません';
                     }
                 })
-                .catch(error => {
-                    document.getElementById('headerSidebar').textContent = 'エラー: ' + error.message;
-                });
         </script>
     </body>
 </html>

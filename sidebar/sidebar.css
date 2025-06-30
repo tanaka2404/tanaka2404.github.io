@@ -9,13 +9,11 @@ body {
     margin: 0;
     font-family: 'Varela Round', sans-serif;
 }
-
 .main {
     margin-top: 60px;
     display: flex;
     justify-content: center;
 }
-
 .header {
     display: block;
     margin: 0 auto;
