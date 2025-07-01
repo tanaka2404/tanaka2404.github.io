@@ -6,8 +6,10 @@
 #hidari {
     position: absolute;
     left: 10px;
+    background-color: black;
 }
 #migi {
     position: absolute;
     right: 10px;
+    background-color: black;
 }

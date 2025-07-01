@@ -64,14 +64,14 @@ body {
     cursor: pointer;
     text-decoration: none;
 }
-input[type="checkbox"]:checked ~ #sidebarMenu {
+.openSidebarMenu:checked ~ #sidebarMenu {
     transform: translateX(0);
 }
 
 .openSidebarMenu {
     transition: all 0.3s;
     box-sizing: border-box;
-    display: none;
+    display: block;
 }
 .sidebarIconToggle {
     transition: all 0.3s;
