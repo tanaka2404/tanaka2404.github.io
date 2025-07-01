@@ -1,15 +1,16 @@
-#koukoku {
-    width: 160px;
-    height: 600px;
-    margin-top: calc(50vh - 300px - 60px);
-}
 #hidari {
     position: absolute;
     left: 10px;
     background-color: black;
+    width: 160px;
+    height: 600px;
+    margin-top: calc(50vh - 300px - 60px);
 }
 #migi {
     position: absolute;
     right: 10px;
     background-color: black;
+    width: 160px;
+    height: 600px;
+    margin-top: calc(50vh - 300px - 60px);
 }
