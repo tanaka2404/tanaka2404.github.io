@@ -37,11 +37,13 @@ body {
     transition: transform 250ms ease-in-out;
     border-left: 2px outset;
     background-color: #FFF;
+    z-index: 999;
 }
 .sidebarMenuInner{
     margin:0;
     padding:0;
     border-top: 1px solid rgba(255, 255, 255, 0.10);
+    z-index: 1000;
 }
 .sidebarMenuInner li{
     list-style: none;
