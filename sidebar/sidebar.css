@@ -1,135 +1,47 @@
-@import url('https://fonts.googleapis.com/css?family=Varela+Round');
-html, body {
-    overflow-x: hidden;
-    height: 100%;
-}
-body {
-    background: #fff;
-    padding: 0;
-    margin: 0;
-    font-family: 'Varela Round', sans-serif;
-}
-.main {
-    margin-top: 60px;
-    display: flex;
-    justify-content: center;
-}
 .header {
     display: block;
     margin: 0 auto;
+    top: 0;
     width: 100%;
     max-width: 100%;
     box-shadow: none;
     position: fixed;
     height: 60px!important;
     overflow: hidden;
-    z-index: 10;
-    border-bottom: 2px outset;
+    z-index: 1000;
+    border-bottom: 2px solid #999;
     background-color: #FFF;
 }
 #sidebarMenu {
-    height: 100%;
+    height: calc(100% - 63px);
     position: fixed;
     right: 0;
+    top: 0px;
     width: 250px;
-    margin-top: 60px;
-    transform: translateX(250px);
+    margin-top: calc(60px + 2px);
+    transform: translateX(252px);
     transition: transform 250ms ease-in-out;
-    border-left: 2px outset;
+    border-left: 2px solid #999;
     background-color: #FFF;
     z-index: 999;
 }
-.sidebarMenuInner{
-    margin:0;
-    padding:0;
-    border-top: 1px solid rgba(255, 255, 255, 0.10);
-    z-index: 1000;
-}
-.sidebarMenuInner li{
-    list-style: none;
-    color: #000;
-    text-transform: uppercase;
-    font-weight: bold;
-    padding: 20px;
-    cursor: pointer;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
-}
-.sidebarMenuInner li span{
-    display: block;
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.50);
-}
-.sidebarMenuInner li a{
-    color: #000;
-    text-transform: uppercase;
-    font-weight: bold;
-    cursor: pointer;
-    text-decoration: none;
-}
-.openSidebarMenu:checked ~ #sidebarMenu {
-    transform: translateX(0);
-}
-
+.sidebarMenuInner{padding:0;border-top: 1px solid rgba(255, 255, 255, 0.10);}
+.sidebarMenuInner li{list-style: none;color: #000;text-transform: uppercase;font-weight: bold;padding: 20px;cursor: pointer;border-bottom: 1px solid rgba(255, 255, 255, 0.10);}
+.sidebarMenuInner li span{display: block;font-size: 14px;color: rgba(255, 255, 255, 0.50);}
+.sidebarMenuInner li a{color: #000;text-transform: uppercase;font-weight: bold;cursor: pointer;text-decoration: none;}
+.openSidebarMenu:checked ~ #sidebarMenu {transform: translateX(0);}
 .openSidebarMenu {
-    transition: all 0.3s;
-    box-sizing: border-box;
-    display: block;
+    transition: all 0.3s;box-sizing: border-box;display: none;
 }
 .sidebarIconToggle {
-    transition: all 0.3s;
-    box-sizing: border-box;
-    cursor: pointer;
-    position: absolute;
-    z-index: 99;
-    height: 100%;
-    width: 100%;
-    top: 22px;
-    right: 15px;
-    height: 22px;
-    width: 22px;
+    transition: all 0.3s;box-sizing: border-box;cursor: pointer;position: absolute;
+    z-index: 10001;
+    height: 100%;width: 100%;top: 22px;right: 15px;height: 22px;width: 22px;
 }
-.spinner {
-    transition: all 0.3s;
-    box-sizing: border-box;
-    position: absolute;
-    height: 3px;
-    width: 100%;
-    background-color: #333;
-}
-.horizontal {
-    transition: all 0.3s;
-    box-sizing: border-box;
-    position: relative;
-    float: right;
-    margin-top: 3px;
-}
-.diagonal.part-1 {
-    position: relative;
-    transition: all 0.3s;
-    box-sizing: border-box;
-    float: right;
-}
-.diagonal.part-2 {
-    transition: all 0.3s;
-    box-sizing: border-box;
-    position: relative;
-    float: right;
-    margin-top: 3px;
-}
-.openSidebarMenu:checked ~ .sidebarIconToggle > .horizontal {
-    transition: all 0.3s;
-    box-sizing: border-box;
-    opacity: 0;
-}
-.openSidebarMenu:checked ~ .sidebarIconToggle > .diagonal.part-1 {
-    transition: all 0.3s;
-    box-sizing: border-box;
-    transform: rotate(135deg);
-    margin-top: 8px;
-}
-.openSidebarMenu:checked ~ .sidebarIconToggle > .diagonal.part-2 {
-    transition: all 0.3s;
-    box-sizing: border-box;
-    transform: rotate(-135deg);
-    margin-top: -9px;
-}
+.spinner {transition: all 0.3s;box-sizing: border-box;position: absolute;height: 3px;width: 100%;background-color: #333;}
+.horizontal {transition: all 0.3s;box-sizing: border-box;position: relative;float: right;margin-top: 3px;}
+.diagonal.part-1 {position: relative;transition: all 0.3s;box-sizing: border-box;float: right;}
+.diagonal.part-2 {transition: all 0.3s;box-sizing: border-box;position: relative;float: right;margin-top: 3px;}
+.openSidebarMenu:checked ~ .sidebarIconToggle > .horizontal {transition: all 0.3s;box-sizing: border-box;opacity: 0;}
+.openSidebarMenu:checked ~ .sidebarIconToggle > .diagonal.part-1 {transition: all 0.3s;box-sizing: border-box;transform: rotate(135deg);margin-top: 8px;}
+.openSidebarMenu:checked ~ .sidebarIconToggle > .diagonal.part-2 {transition: all 0.3s;box-sizing: border-box;transform: rotate(-135deg);margin-top: -9px;}
