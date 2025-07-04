@@ -1,14 +1,12 @@
 .header {
     display: block;
-    margin: 0 auto;
     top: 0;
+    right: 0px;
     width: 100%;
-    max-width: 100%;
-    box-shadow: none;
+    height: 60px;
     position: fixed;
-    height: 60px!important;
     overflow: hidden;
-    z-index: 1000;
+    z-index: 1;
     border-bottom: 2px solid #999;
     background-color: #FFF;
 }
@@ -23,20 +21,27 @@
     transition: transform 250ms ease-in-out;
     border-left: 2px solid #999;
     background-color: #FFF;
-    z-index: 999;
 }
-.sidebarMenuInner{padding:0;border-top: 1px solid rgba(255, 255, 255, 0.10);}
+.sidebarMenuInner{margin:0;padding:0;border-top: 1px solid rgba(255, 255, 255, 0.10);}
 .sidebarMenuInner li{list-style: none;color: #000;text-transform: uppercase;font-weight: bold;padding: 20px;cursor: pointer;border-bottom: 1px solid rgba(255, 255, 255, 0.10);}
 .sidebarMenuInner li span{display: block;font-size: 14px;color: rgba(255, 255, 255, 0.50);}
 .sidebarMenuInner li a{color: #000;text-transform: uppercase;font-weight: bold;cursor: pointer;text-decoration: none;}
 .openSidebarMenu:checked ~ #sidebarMenu {transform: translateX(0);}
 .openSidebarMenu {
-    transition: all 0.3s;box-sizing: border-box;display: none;
+    transition: all 0.3s;
+    box-sizing: border-box;
+    display: none;
 }
 .sidebarIconToggle {
-    transition: all 0.3s;box-sizing: border-box;cursor: pointer;position: absolute;
-    z-index: 10001;
-    height: 100%;width: 100%;top: 22px;right: 15px;height: 22px;width: 22px;
+    transition: all 0.3s;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: absolute;
+    z-index: 99;
+    top: 22px;
+    right: 15px;
+    height: 22px;
+    width: 22px;
 }
 .spinner {transition: all 0.3s;box-sizing: border-box;position: absolute;height: 3px;width: 100%;background-color: #333;}
 .horizontal {transition: all 0.3s;box-sizing: border-box;position: relative;float: right;margin-top: 3px;}
