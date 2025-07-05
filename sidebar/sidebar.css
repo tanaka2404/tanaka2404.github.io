@@ -1,4 +1,15 @@
+/* 変数 */
+:root {
+    /* z-indexの指定 */
+    --z-index-header            : 100;
+    --z-index-sidebarMenu       : 110;
+    --z-index-sidebarIconToggle : 120;
+    --z-index-openSidebarMenu   : 130;
+    --z-index-spinner           : 140;
+}
+
 .header {
+    z-index: var(--z-index-header);
     display: block;
     top: 0;
     right: 0px;
@@ -6,11 +17,11 @@
     height: 60px;
     position: fixed;
     overflow: hidden;
-    z-index: 1;
     border-bottom: 2px solid #999;
     background-color: #FFF;
 }
 #sidebarMenu {
+    z-index: var(--z-index-sidebarMenu);
     height: calc(100% - 63px);
     position: fixed;
     right: 0;
@@ -28,22 +39,24 @@
 .sidebarMenuInner li a{color: #000;text-transform: uppercase;font-weight: bold;cursor: pointer;text-decoration: none;}
 .openSidebarMenu:checked ~ #sidebarMenu {transform: translateX(0);}
 .openSidebarMenu {
+    z-index: var(--z-index-openSidebarMenu);
     transition: all 0.3s;
     box-sizing: border-box;
     display: none;
 }
 .sidebarIconToggle {
+    z-index: var(--z-index-sidebarIconToggle);
     transition: all 0.3s;
     box-sizing: border-box;
     cursor: pointer;
     position: absolute;
-    z-index: 99;
+    /* z-index: 99; */
     top: 22px;
     right: 15px;
     height: 22px;
     width: 22px;
 }
-.spinner {transition: all 0.3s;box-sizing: border-box;position: absolute;height: 3px;width: 100%;background-color: #333;}
+.spinner {z-index: var(--z-index-spinner);transition: all 0.3s;box-sizing: border-box;position: absolute;height: 3px;width: 100%;background-color: #333;}
 .horizontal {transition: all 0.3s;box-sizing: border-box;position: relative;float: right;margin-top: 3px;}
 .diagonal.part-1 {position: relative;transition: all 0.3s;box-sizing: border-box;float: right;}
 .diagonal.part-2 {transition: all 0.3s;box-sizing: border-box;position: relative;float: right;margin-top: 3px;}
