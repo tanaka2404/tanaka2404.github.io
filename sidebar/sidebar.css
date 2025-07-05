@@ -47,6 +47,3 @@
 .horizontal {transition: all 0.3s;box-sizing: border-box;position: relative;float: right;margin-top: 3px;}
 .diagonal.part-1 {position: relative;transition: all 0.3s;box-sizing: border-box;float: right;}
 .diagonal.part-2 {transition: all 0.3s;box-sizing: border-box;position: relative;float: right;margin-top: 3px;}
-.openSidebarMenu:checked ~ .sidebarIconToggle > .horizontal {transition: all 0.3s;box-sizing: border-box;opacity: 0;}
-.openSidebarMenu:checked ~ .sidebarIconToggle > .diagonal.part-1 {transition: all 0.3s;box-sizing: border-box;transform: rotate(135deg);margin-top: 8px;}
-.openSidebarMenu:checked ~ .sidebarIconToggle > .diagonal.part-2 {transition: all 0.3s;box-sizing: border-box;transform: rotate(-135deg);margin-top: -9px;}
