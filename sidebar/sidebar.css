@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Varela+Round");
 .header {
   z-index: 100;
   display: block;
@@ -23,6 +24,7 @@
   transition: transform 250ms ease-in-out;
   border-left: 2px solid #999;
   background-color: #FFF;
+  font-family: "Varela Round", sans-serif;
 }
 
 .sidebarMenuInner {
