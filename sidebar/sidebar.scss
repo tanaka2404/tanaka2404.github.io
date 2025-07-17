@@ -6,6 +6,7 @@ $z-index-sidebarMenu        : 110;
 $z-index-sidebarIconToggle  : 110;
 $z-index-openSidebarMenu    : 110;
 $z-index-spinner            : 110;
+$sidebar-linkAnimSpeed      : 0.3s;
 .header {
     z-index: $z-index-header;
     display: block;
@@ -55,6 +56,23 @@ $z-index-spinner            : 110;
             font-weight: bold;
             cursor: pointer;
             text-decoration: none;
+            padding: 5px;
+            position: relative;
+            display: inline-block;
+            transition: .3s;
+            &::after{
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                content: '';
+                width: 0;
+                height: 2px;
+                background-color: rgb(49, 170, 226);
+                transition: $sidebar-linkAnimSpeed;
+            }
+            &:hover::after{
+                width: 100%;
+            }
         }
     }
 }
