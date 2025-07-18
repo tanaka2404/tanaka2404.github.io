@@ -1,0 +1,17 @@
+@use "sass:math";
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+// 変数
+$z-index-header             : 100;
+$z-index-headerIcon         : 110;
+.header {
+    z-index: $z-index-header;
+    display: block;
+    top: 0;
+    right: 0px;
+    width: 100%;
+    height: 60px;
+    position: static;
+    overflow: hidden;
+    border-bottom: 2px solid #999;
+    background-color: #FFF;
+}
