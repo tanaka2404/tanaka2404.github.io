@@ -1,24 +1,18 @@
 @import url("https://fonts.googleapis.com/css?family=Varela+Round");
 /* AD */
-#hidari {
+#koukoku #hidari {
+  margin-top: calc(50vh - 300px - 60px);
   left: 10px;
   width: 160px;
   height: 600px;
-  /* border: 2px solid; */
+  position: absolute;
 }
-
-#migi {
+#koukoku #migi {
+  margin-top: calc(50vh - 300px - 60px);
+  right: 10px;
+  position: absolute;
   width: 160px;
   height: 600px;
-  /* border: 2px solid; */
-  margin-top: 60px;
-}
-
-#GoogleAd-hidari {
-  width: 200px;
-  height: 600px;
-  /* border: 2px solid; */
-  margin-top: 60px;
 }
 
 /* AD */

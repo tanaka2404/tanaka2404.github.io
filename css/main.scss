@@ -1,27 +1,31 @@
 @import url('https://fonts.googleapis.com/css?family=Varela+Round');
 
+$AD-center  : calc(50vh - 300px - 60px);
+
 /* AD */
-#hidari {
-    left: 10px;
-    width: 160px;
-    height: 600px;
-    /* border: 2px solid; */
-}
-#migi {
-    width: 160px;
-    height: 600px;
-    /* border: 2px solid; */
-    margin-top: 60px;
-}
-#GoogleAd-hidari {
-    width: 200px;
-    height: 600px;
-    /* border: 2px solid; */
-    margin-top: 60px;
+#koukoku {
+    #hidari {
+        margin-top: $AD-center;
+        left: 10px;
+        width: 160px;
+        height: 600px;
+        // border: 2px solid;
+        position: absolute;
+    }
+    #migi {
+        margin-top: $AD-center;
+        right: 10px;
+        position: absolute;
+        width: 160px;
+        height: 600px;
+        // border: 2px solid;
+    }
 }
 /* AD */
 
 /* main */
+.header{
+}
 .main {
     margin-top: 60px;
     width: 100%;
