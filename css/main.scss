@@ -1,30 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Varela+Round');
 
+//変数
+$breakpoints: ( "sp" : "(max-width: 480px)",
+                "tab": "(max-width: 768px)",
+                "pc": "(min-width: 769px)" );  //画面のサイズに合わせて変える
+
 $AD-center  : calc(50vh - 300px - 60px);
-$bgColor    : rgb(249, 250, 251);
+$bgColor-All    : rgb(245, 245, 245);
+$bgColor-Content    : white;
+//変数
 
-/* AD */
-#koukoku {
-    #hidari {
-        margin-top: $AD-center;
-        left: 10px;
-        width: 160px;
-        height: 600px;
-        // border: 2px solid;
-        position: absolute;
-    }
-    #migi {
-        margin-top: $AD-center;
-        right: 10px;
-        position: absolute;
-        width: 160px;
-        height: 600px;
-        // border: 2px solid;
-    }
-}
-/* AD */
-
-/* main */
+/* メイン */
 html, body{
     width: 100%;
     height: 100%;
@@ -38,23 +24,52 @@ html, body{
     margin-top: 60px;
     width: 100%;
     height: 100%;
-    background-color: $bgColor;
+    background-color: $bgColor-All;
     margin: 0;
-    .MainContent{
-        position: absolute;
-        border-left: 2px solid;
-        border-right: 2px solid;
-        width: 600px;
-        height: 100%;
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        
-        margin: auto;
+    @include mq("pc"){      //  pcで表示した場合
+        .MainContent{
+            top: 0;         //  |
+            right: 0;       //  |
+            left: 0;        //  |→要素を中央にするコード
+            bottom: 0;      //  |
+            margin: auto;   //  |
+            background-color: $bgColor-Content;
+            position: absolute;
+            width: 600px;
+            height: calc(100% - 20px);
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+        #koukoku {
+            #hidari {
+                display: block;
+                margin-top: $AD-center;
+                left: 10px;
+                width: 160px;
+                height: 600px;
+                // border: 2px solid;
+                position: absolute;
+            }
+        }
     }
+    @include mq("sp"){
+        .MainContent{
+        }
+        #koukoku {
+            #hidari {
+                display: none;
+            }
+        }
+    }
+    
 }
 .body {
     font-family: 'Varela Round', sans-serif;
 }
-/* main */
+/* メイン */
+
+
+
+/* 広告 */
+
+/* 広告 */

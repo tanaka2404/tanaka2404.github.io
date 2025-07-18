@@ -1,22 +1,6 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Varela+Round");
-/* AD */
-#koukoku #hidari {
-  margin-top: calc(50vh - 300px - 60px);
-  left: 10px;
-  width: 160px;
-  height: 600px;
-  position: absolute;
-}
-#koukoku #migi {
-  margin-top: calc(50vh - 300px - 60px);
-  right: 10px;
-  position: absolute;
-  width: 160px;
-  height: 600px;
-}
-
-/* AD */
-/* main */
+/* メイン */
 html, body {
   width: 100%;
   height: 100%;
@@ -28,24 +12,35 @@ html, body {
   margin-top: 60px;
   width: 100%;
   height: 100%;
-  background-color: rgb(249, 250, 251);
+  background-color: rgb(245, 245, 245);
   margin: 0;
 }
 .main .MainContent {
-  position: absolute;
-  border-left: 2px solid;
-  border-right: 2px solid;
-  width: 600px;
-  height: 100%;
   top: 0;
   right: 0;
   left: 0;
   bottom: 0;
   margin: auto;
+  background-color: white;
+  position: absolute;
+  width: 600px;
+  height: calc(100% - 20px);
+  border-radius: 20px;
+  margin-bottom: 10px;
 }
 
 .body {
   font-family: "Varela Round", sans-serif;
 }
 
-/* main *//*# sourceMappingURL=main.css.map */
+/* メイン */
+/* 広告 */
+#koukoku #hidari {
+  margin-top: calc(50vh - 300px - 60px);
+  left: 10px;
+  width: 160px;
+  height: 600px;
+  position: absolute;
+}
+
+/* 広告 *//*# sourceMappingURL=main.css.map */
