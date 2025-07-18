@@ -16,31 +16,55 @@ html, body {
   margin: 0;
 }
 .main .MainContent {
-  top: 0;
   right: 0;
   left: 0;
-  bottom: 0;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
   background-color: white;
-  position: absolute;
-  width: 600px;
   height: calc(100% - 20px);
-  border-radius: 20px;
-  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.main .MainContent h1 {
+  margin: 0;
+}
+.main #koukoku #migi {
+  position: absolute;
+  display: block;
+  width: 160px;
+  height: 600px;
+  right: 10px;
+  margin-top: 10px;
+  background-color: rgb(255, 255, 255);
+}
+@media screen and (min-width: 1100px) {
+  .main .MainContent {
+    min-width: 600px;
+    width: 60%;
+  }
+  .main #koukoku #migi {
+    display: block;
+  }
+}
+@media screen and (max-width: 1099px) {
+  .main .MainContent {
+    width: 450px;
+  }
+  .main #koukoku #migi {
+    display: block;
+  }
+}
+@media screen and (max-width: 840px) {
+  .main .MainContent {
+    width: 300px;
+  }
+  .main #koukoku #migi {
+    display: none;
+  }
 }
 
 .body {
   font-family: "Varela Round", sans-serif;
 }
 
-/* メイン */
-/* 広告 */
-#koukoku #hidari {
-  margin-top: calc(50vh - 300px - 60px);
-  left: 10px;
-  width: 160px;
-  height: 600px;
-  position: absolute;
-}
-
-/* 広告 *//*# sourceMappingURL=main.css.map */
+/* メイン *//*# sourceMappingURL=main.css.map */
