@@ -9,6 +9,7 @@ myXml.onreadystatechange = function() {
         let Horizontal = document.querySelector('.horizontal');
         let diagonal1 = document.querySelector('.diagonal.part-1');
         let diagonal2 = document.querySelector('.diagonal.part-2');
+        let header = document.querySelector('.header');
         if(sideBar && SBButton){
             SBButton.addEventListener('change', function(){
                 if(SBButton.checked){

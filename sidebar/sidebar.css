@@ -11,6 +11,13 @@
   border-bottom: 2px solid #999;
   background-color: #FFF;
 }
+.header .headerIcon {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 0;
+  z-index: 110;
+}
 
 #sidebarMenu {
   z-index: 110;

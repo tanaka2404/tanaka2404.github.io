@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Varela+Round');
 // 変数
 $z-index-header             : 100;
+$z-index-headerIcon         : 110;  
 $z-index-sidebarMenu        : 110;
 $z-index-sidebarIconToggle  : 110;
 $z-index-openSidebarMenu    : 110;
@@ -18,6 +19,13 @@ $sidebar-linkAnimSpeed      : 0.3s;
     overflow: hidden;
     border-bottom: 2px solid #999;
     background-color: #FFF;
+    .headerIcon{
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        top: 0;
+        z-index: $z-index-headerIcon;
+    }
 }
 #sidebarMenu{
     z-index: $z-index-sidebarMenu;
