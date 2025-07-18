@@ -44,12 +44,16 @@ $bgColor-Ad     : rgb(255, 255, 255);
 //関数
 
 /* メイン */
-html, body{
-    width: 100%;
-    height: 100%;
-    margin: 0;
+html{
+    &,body{
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+    body{
+        font-family: 'Varela Round', sans-serif;
+    }
 }
-
 .main {
     position: absolute;
     margin-top: 60px;
@@ -98,8 +102,5 @@ html, body{
         @include rightAd("false");
     }
     
-}
-.body {
-    font-family: 'Varela Round', sans-serif;
 }
 /* メイン */

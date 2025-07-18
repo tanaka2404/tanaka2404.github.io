@@ -1,7 +1,7 @@
 var myXml = new XMLHttpRequest();
 myXml.onreadystatechange = function() {
     if ((myXml.readyState === 4) && (myXml.status === 200)) {
-        document.getElementById("header").innerHTML = myXml.responseText;
+        document.getElementById("pageList").innerHTML = myXml.responseText;
         // ロード後の処理を記述
     }
 }

@@ -9,4 +9,8 @@
   overflow: hidden;
   border-bottom: 2px solid #999;
   background-color: #FFF;
+}
+
+.pages {
+  position: absolute;
 }/*# sourceMappingURL=fetch.css.map */
