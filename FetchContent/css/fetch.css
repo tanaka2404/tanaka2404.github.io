@@ -36,6 +36,7 @@
 .headPageList {
   transition: all 0.5s;
   opacity: 0;
+  visibility: hidden;
   position: absolute;
   border-radius: 10px;
   border-top-left-radius: 0;
@@ -83,4 +84,5 @@
 
 .pageListVisible {
   opacity: 100%;
+  visibility: visible;
 }/*# sourceMappingURL=fetch.css.map */

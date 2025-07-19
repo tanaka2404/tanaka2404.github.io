@@ -39,6 +39,7 @@ $z-index-pageListToggle     : 120;
 .headPageList{
     transition: all 0.5s;
     opacity: 0;
+    visibility: hidden;
     position: absolute;
     border-radius: 10px;
     border-top-left-radius: 0;
@@ -85,4 +86,5 @@ $z-index-pageListToggle     : 120;
 }
 .pageListVisible{
     opacity: 100%;
+    visibility: visible;
 }

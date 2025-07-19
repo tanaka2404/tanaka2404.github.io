@@ -7,10 +7,6 @@ myXml.onreadystatechange = function() {
             let headPageList = document.querySelector('.headPageList');
             headPageList.classList.toggle('pageListVisible');
         });
-        // headerPageListToggle.addEventListener('click', function(){
-        //     let headPageList = document.querySelector('.headPageList');
-        //     headPageList.classList.toggle('pageListVisible');
-        // });
     }
 }
 myXml.open("GET", "https://raw.githubusercontent.com/tanaka2404/tanaka2404.github.io/refs/heads/main/FetchContent/header.html", true);  // 元URL 
