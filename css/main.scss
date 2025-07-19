@@ -2,7 +2,8 @@
 
 //変数
 $breakpoints: (
-    'sp': 'screen and (max-width: 840px)',
+    'sp': 'screen and (max-width: 700px)',
+    'mid': 'screen and (max-width: 840px)',
     'tab': 'screen and (max-width: 1099px)',
     'pc': 'screen and (min-width: 1100px)',
 ) !default;
@@ -28,15 +29,19 @@ $bgColor-Ad     : rgb(255, 255, 255);
 //右の広告を表示するか
 @mixin rightAd($rightAdVisible){
     @if $rightAdVisible == "false"{
-        #koukoku {
-            #migi {
-                display: none;
+        .main{
+            #koukoku {
+                #migi {
+                    display: none;
+                }
             }
         }
     } @else if$rightAdVisible == "true"{
-        #koukoku {
-            #migi {
-                display: block;
+        .main{
+            #koukoku {
+                #migi {
+                    display: block;
+                }
             }
         }
     }
@@ -71,6 +76,43 @@ html{
             margin: 0;
         }
     }
+    .pages{
+        position: absolute;
+        border-radius: 10px;
+        background-color: white;
+        left: 20px;
+        margin-top: 50px;
+        width: 160px;
+        .pageList{
+            margin: 0;
+            padding: 0;
+            li{
+                list-style: none;
+                a{
+                    color: black;
+                    font-weight: bold;
+                    cursor: pointer;
+                    text-decoration: none;
+                    padding: 5px;
+                    position: relative;
+                    display: inline-block;
+                    &::after{
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        content: '';
+                        width: 0;
+                        height: 2px;
+                        background-color: rgb(49, 170, 226);
+                        transition: width 0.3s;
+                    }
+                    &:hover::after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
     #koukoku {
         #migi {
             position: absolute;
@@ -82,25 +124,44 @@ html{
             background-color: $bgColor-Ad;
         }
     }
-    @include mq(){      //  pcで表示した場合
-        .MainContent{
-            min-width: 600px;   //幅の最小値を設定
-            width: 60%;         //ページ幅の80%に固定して可変させる
-        }
-        @include rightAd("true");
-    }
-    @include mq("tab"){     //タブレットで表示した場合
-        .MainContent{
-            width: 450px;
-        }
-        @include rightAd("true");
-    }
-    @include mq("sp"){      //スマホで表示した場合
-        .MainContent{
-            width: 300px;
-        }
-        @include rightAd("false");
-    }
-    
 }
+//画面サイズによってスタイルを変える
+@include mq(){      //  pcで表示した場合
+    .MainContent{
+        min-width: 600px;   //幅の最小値を設定
+        width: 60%;         //ページ幅の80%に固定して可変させる
+    }
+    .pages {
+        display: block;
+    }
+    @include rightAd("true");
+}
+@include mq("tab"){     //タブレットで表示した場合
+    .MainContent{
+        width: 450px;
+    }
+    .pages {
+        display: block;
+    }
+    @include rightAd("true");
+}
+@include mq("mid"){      //スマホ(少し大きい)で表示した場合
+    .MainContent{
+        width: 300px;
+    }
+    .pages {
+        display: block;
+    }
+    @include rightAd("false");
+}
+@include mq("sp"){      //スマホ(小さい)で表示した場合
+    .MainContent{
+        width: 300px;
+    }
+    .pages {
+        display: none;  //左のページリストを非表示
+    }
+    @include rightAd("false");
+}
+//画面サイズによってスタイルを変える
 /* メイン */
