@@ -60,6 +60,8 @@ $z-index-pageListToggle     : 120;
         padding: 0;
         li{
             list-style: none;
+            width: 100%;
+            cursor: pointer;
             a{
                 color: black;
                 font-weight: bold;
@@ -78,7 +80,9 @@ $z-index-pageListToggle     : 120;
                     background-color: rgb(49, 170, 226);
                     transition: width 0.3s;
                 }
-                &:hover::after {
+            }
+            &:hover{
+                a::after{
                     width: 100%;
                 }
             }

@@ -7,6 +7,20 @@ myXml.onreadystatechange = function() {
             let headPageList = document.querySelector('.headPageList');
             headPageList.classList.toggle('pageListVisible');
         });
+        // 全li取得
+        let lists = document.querySelectorAll('li');
+        for(let i=0;i<lists.length;i++){
+            // 全liそれぞれに対する「クリックされたとき」の処理
+            lists[i].addEventListener('click',function(){
+                console.log('clicked');
+                // クリックされたliの子要素 aタグのリンク先を取得
+                let href = this.querySelector('a').getAttribute('href');
+                // 現在のタブで開く
+                location.href = href;
+                // 新しいタブで開く
+                // window.open(href);
+            });
+        }
     }
 }
 myXml.open("GET", "https://raw.githubusercontent.com/tanaka2404/tanaka2404.github.io/refs/heads/main/FetchContent/header.html", true);  // 元URL 

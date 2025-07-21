@@ -2,6 +2,7 @@
 
 //変数
 $breakpoints: (
+    'MCAdMax': 'screen and (max-width: 520px)',
     'sp': 'screen and (max-width: 700px)',
     'mid': 'screen and (max-width: 840px)',
     'tab': 'screen and (max-width: 1099px)',
@@ -11,7 +12,6 @@ $breakpoints: (
 
 $bgColor-All    : rgb(245, 245, 245);
 $bgColor-Content    : white;
-$bgColor-Ad     : rgb(255, 255, 255);
 //変数
 
 //関数
@@ -25,6 +25,9 @@ $bgColor-Ad     : rgb(255, 255, 255);
     left: 0;
     margin-left: auto;
     margin-right: auto;
+}
+@mixin MCTrim(){
+    width: calc(100% - 20px - 160px - 20px);
 }
 //右の広告を表示するか
 @mixin rightAd($rightAdVisible){
@@ -67,14 +70,25 @@ html{
     background-color: $bgColor-All;
     margin: 0;
     .MainContent{
-        @include center;
         border-radius: 10px;
         background-color: $bgColor-Content;
         height: calc(100% - 20px);
         margin-top: 10px;
-        h1 {
+        .Title {
             margin: 0;
+            width: 100%;
+            text-align: center;
         }
+        //AD
+        .ContentAd{
+            .ContentAd1{
+                position: absolute;
+                margin-left: 10px;
+                height: 60px;
+                width: 468px;
+            }
+        }
+        //AD
     }
     .pages{
         position: absolute;
@@ -83,17 +97,25 @@ html{
         left: 20px;
         margin-top: 50px;
         width: 160px;
+        p{
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            border-bottom: 1px solid;
+        }
         .pageList{
             margin: 0;
             padding: 0;
             li{
                 list-style: none;
+                width: 100%;
+                cursor: pointer;
                 a{
                     color: black;
                     font-weight: bold;
-                    cursor: pointer;
                     text-decoration: none;
-                    padding: 5px;
+                    margin: 5px;
                     position: relative;
                     display: inline-block;
                     &::after{
@@ -106,7 +128,9 @@ html{
                         background-color: rgb(49, 170, 226);
                         transition: width 0.3s;
                     }
-                    &:hover::after {
+                }
+                &:hover{
+                    a::after{
                         width: 100%;
                     }
                 }
@@ -121,15 +145,19 @@ html{
             height: 600px;
             right: 10px;
             margin-top: 10px;
-            background-color: $bgColor-Ad;
         }
     }
+
 }
 //画面サイズによってスタイルを変える
 @include mq(){      //  pcで表示した場合
     .MainContent{
+        @include center;
         min-width: 600px;   //幅の最小値を設定
         width: 60%;         //ページ幅の80%に固定して可変させる
+        .Title{
+            font-size: 6vw;
+        }
     }
     .pages {
         display: block;
@@ -138,30 +166,52 @@ html{
 }
 @include mq("tab"){     //タブレットで表示した場合
     .MainContent{
-        width: 450px;
+        @include MCTrim();
+        margin-left: 10px;
+        .Title{
+            font-size: 6vw;
+        }
+    }
+    .ContentAd{
+        .ContentAd1{
+
+        }
     }
     .pages {
-        display: block;
+        display: none;
     }
     @include rightAd("true");
 }
 @include mq("mid"){      //スマホ(少し大きい)で表示した場合
     .MainContent{
-        width: 300px;
+        @include MCTrim();
+        .Title{
+            font-size: 6vw;
+        }
     }
     .pages {
-        display: block;
+        display: none;
     }
-    @include rightAd("false");
+    @include rightAd("true");
 }
 @include mq("sp"){      //スマホ(小さい)で表示した場合
     .MainContent{
-        width: 300px;
+        width: calc(100% - 20px);
+        .Title{
+            font-size: 50.4px;
+        }
     }
     .pages {
         display: none;  //左のページリストを非表示
     }
     @include rightAd("false");
+}
+@include mq("MCAdMax"){
+    .ContentAd{
+        .ContentAd1{
+            display: none;
+        }
+    }
 }
 //画面サイズによってスタイルを変える
 /* メイン */

@@ -19,17 +19,21 @@ html body {
   margin: 0;
 }
 .main .MainContent {
-  right: 0;
-  left: 0;
-  margin-left: auto;
-  margin-right: auto;
   border-radius: 10px;
   background-color: white;
   height: calc(100% - 20px);
   margin-top: 10px;
 }
-.main .MainContent h1 {
+.main .MainContent .Title {
   margin: 0;
+  width: 100%;
+  text-align: center;
+}
+.main .MainContent .ContentAd .ContentAd1 {
+  position: absolute;
+  margin-left: 10px;
+  height: 60px;
+  width: 468px;
 }
 .main .pages {
   position: absolute;
@@ -39,19 +43,27 @@ html body {
   margin-top: 50px;
   width: 160px;
 }
+.main .pages p {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  border-bottom: 1px solid;
+}
 .main .pages .pageList {
   margin: 0;
   padding: 0;
 }
 .main .pages .pageList li {
   list-style: none;
+  width: 100%;
+  cursor: pointer;
 }
 .main .pages .pageList li a {
   color: black;
   font-weight: bold;
-  cursor: pointer;
   text-decoration: none;
-  padding: 5px;
+  margin: 5px;
   position: relative;
   display: inline-block;
 }
@@ -65,7 +77,7 @@ html body {
   background-color: rgb(49, 170, 226);
   transition: width 0.3s;
 }
-.main .pages .pageList li a:hover::after {
+.main .pages .pageList li:hover a::after {
   width: 100%;
 }
 .main #koukoku #migi {
@@ -75,13 +87,19 @@ html body {
   height: 600px;
   right: 10px;
   margin-top: 10px;
-  background-color: rgb(255, 255, 255);
 }
 
 @media screen and (min-width: 1100px) {
   .MainContent {
+    right: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
     min-width: 600px;
     width: 60%;
+  }
+  .MainContent .Title {
+    font-size: 6vw;
   }
   .pages {
     display: block;
@@ -92,10 +110,14 @@ html body {
 }
 @media screen and (max-width: 1099px) {
   .MainContent {
-    width: 450px;
+    width: calc(100% - 20px - 160px - 20px);
+    margin-left: 10px;
+  }
+  .MainContent .Title {
+    font-size: 6vw;
   }
   .pages {
-    display: block;
+    display: none;
   }
   .main #koukoku #migi {
     display: block;
@@ -103,23 +125,34 @@ html body {
 }
 @media screen and (max-width: 840px) {
   .MainContent {
-    width: 300px;
+    width: calc(100% - 20px - 160px - 20px);
+  }
+  .MainContent .Title {
+    font-size: 6vw;
   }
   .pages {
+    display: none;
+  }
+  .main #koukoku #migi {
     display: block;
+  }
+}
+@media screen and (max-width: 700px) {
+  .MainContent {
+    width: calc(100% - 20px);
+  }
+  .MainContent .Title {
+    font-size: 50.4px;
+  }
+  .pages {
+    display: none;
   }
   .main #koukoku #migi {
     display: none;
   }
 }
-@media screen and (max-width: 700px) {
-  .MainContent {
-    width: 300px;
-  }
-  .pages {
-    display: none;
-  }
-  .main #koukoku #migi {
+@media screen and (max-width: 520px) {
+  .ContentAd .ContentAd1 {
     display: none;
   }
 }

@@ -59,6 +59,8 @@
 }
 .headPageList .pageList li {
   list-style: none;
+  width: 100%;
+  cursor: pointer;
 }
 .headPageList .pageList li a {
   color: black;
@@ -79,7 +81,7 @@
   background-color: rgb(49, 170, 226);
   transition: width 0.3s;
 }
-.headPageList .pageList li a:hover::after {
+.headPageList .pageList li:hover a::after {
   width: 100%;
 }
 
