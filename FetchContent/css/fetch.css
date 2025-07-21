@@ -27,6 +27,7 @@
   z-index: 120;
 }
 .header .pageListToggle .pageListToggleText {
+  font-weight: bold;
   top: 0;
   margin: 0 auto;
   font-size: 21px;
